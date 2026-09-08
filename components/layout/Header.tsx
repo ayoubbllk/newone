@@ -11,9 +11,6 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { SITE } from "@/lib/site";
 
-/** Fond exact du Logo.jpeg (échantillon #F7F6F4). */
-const LOGO_BG = "#F7F6F4";
-
 export function Header() {
   const { scrollY } = useScroll();
   const [scrolled, setScrolled] = useState(false);
@@ -29,12 +26,10 @@ export function Header() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
-        "sticky top-0 z-50 border-b border-navy/10 text-navy transition-[box-shadow,background-color] duration-300",
-        scrolled && "shadow-[0_8px_30px_rgba(11,42,74,0.08)] backdrop-blur-md"
+        "sticky top-0 z-50 border-b border-navy/10 bg-offwhite text-navy transition-[box-shadow,background-color] duration-300",
+        scrolled &&
+          "bg-offwhite/92 shadow-[0_8px_30px_rgba(11,42,74,0.08)] backdrop-blur-md"
       )}
-      style={{
-        backgroundColor: scrolled ? "rgba(247,246,244,0.92)" : LOGO_BG,
-      }}
     >
       <div
         className={cn(

@@ -117,7 +117,7 @@ export function PillDropdownNav({
           aria-label="Navigation principale"
           onMouseLeave={scheduleClose}
         >
-          <div className="relative flex items-center gap-0.5 rounded-full border border-white/10 bg-[rgba(17,17,17,0.94)] p-1.5 shadow-[0_18px_40px_-18px_rgba(0,0,0,0.55)] backdrop-blur-md">
+          <div className="relative flex items-center gap-0.5 rounded-full border border-navy/20 bg-navy/95 p-1.5 shadow-[0_18px_40px_-18px_rgba(11,42,74,0.45)] backdrop-blur-md">
             {NAV_ITEMS.map((item) => {
               const active = isActive(item.href);
               const isHot =
@@ -141,7 +141,7 @@ export function PillDropdownNav({
                       type="button"
                       className={cn(
                         "relative z-10 inline-flex items-center gap-1.5 rounded-full px-[18px] py-[11px] text-[15px] font-medium tracking-[-0.01em] transition-colors",
-                        isHot ? "text-white" : "text-white/55"
+                        isHot ? "text-offwhite" : "text-offwhite/55"
                       )}
                       aria-expanded={openDropdown === item.href}
                       aria-haspopup="true"
@@ -154,7 +154,7 @@ export function PillDropdownNav({
                       {isHot && (
                         <motion.span
                           layoutId="pill-nav-highlight"
-                          className="absolute inset-0 -z-10 rounded-full bg-white/10"
+                          className="absolute inset-0 -z-10 rounded-full bg-amber-tech/20"
                           transition={
                             reduceMotion
                               ? { duration: 0 }
@@ -165,8 +165,8 @@ export function PillDropdownNav({
                       <span>{item.label}</span>
                       <ChevronDown
                         className={cn(
-                          "h-3.5 w-3.5 text-white/45 transition-transform duration-300",
-                          openDropdown === item.href && "rotate-180 text-white/80"
+                          "h-3.5 w-3.5 text-offwhite/45 transition-transform duration-300",
+                          openDropdown === item.href && "rotate-180 text-amber-tech"
                         )}
                         aria-hidden
                       />
@@ -176,13 +176,13 @@ export function PillDropdownNav({
                       href={item.href}
                       className={cn(
                         "relative z-10 inline-flex items-center rounded-full px-[18px] py-[11px] text-[15px] font-medium tracking-[-0.01em] transition-colors",
-                        isHot ? "text-white" : "text-white/55"
+                        isHot ? "text-offwhite" : "text-offwhite/55"
                       )}
                     >
                       {isHot && (
                         <motion.span
                           layoutId="pill-nav-highlight"
-                          className="absolute inset-0 -z-10 rounded-full bg-white/10"
+                          className="absolute inset-0 -z-10 rounded-full bg-amber-tech/20"
                           transition={
                             reduceMotion
                               ? { duration: 0 }
@@ -212,19 +212,19 @@ export function PillDropdownNav({
                         className="absolute left-1/2 top-[calc(100%+14px)] z-50 w-[min(22rem,calc(100vw-2rem))] -translate-x-1/2"
                         onMouseEnter={clearCloseTimer}
                       >
-                        <div className="overflow-hidden rounded-[20px] border border-white/10 bg-[rgba(30,30,32,0.97)] p-2 shadow-[0_24px_60px_-20px_rgba(0,0,0,0.55)] backdrop-blur-xl">
+                        <div className="overflow-hidden rounded-[20px] border border-navy/30 bg-[rgba(7,24,44,0.97)] p-2 shadow-[0_24px_60px_-20px_rgba(11,42,74,0.55)] backdrop-blur-xl">
                           <ul className="space-y-0.5">
                             {item.children!.map((child) => (
                               <li key={child.href}>
                                 <Link
                                   href={child.href}
-                                  className="block rounded-2xl px-3.5 py-3 transition-colors hover:bg-white/10"
+                                  className="block rounded-2xl px-3.5 py-3 transition-colors hover:bg-amber-tech/15"
                                 >
-                                  <span className="block text-sm font-medium text-white">
+                                  <span className="block text-sm font-medium text-offwhite">
                                     {child.label}
                                   </span>
                                   {child.description && (
-                                    <span className="mt-0.5 line-clamp-2 block text-xs leading-relaxed text-white/45">
+                                    <span className="mt-0.5 line-clamp-2 block text-xs leading-relaxed text-offwhite/50">
                                       {child.description}
                                     </span>
                                   )}
@@ -234,7 +234,7 @@ export function PillDropdownNav({
                             <li>
                               <Link
                                 href="/services"
-                                className="mt-1 block rounded-2xl px-3.5 py-2.5 text-sm font-medium text-amber-tech transition-colors hover:bg-white/10"
+                                className="mt-1 block rounded-2xl px-3.5 py-2.5 text-sm font-medium text-amber-tech transition-colors hover:bg-amber-tech/15"
                               >
                                 Voir tous les services →
                               </Link>
@@ -256,7 +256,7 @@ export function PillDropdownNav({
       {showMobile && (
       <button
         type="button"
-        className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-navy/15 bg-white text-navy shadow-sm transition-colors hover:bg-navy/[0.04] lg:hidden"
+        className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-navy/15 bg-offwhite text-navy shadow-sm transition-colors hover:bg-navy/[0.06] lg:hidden"
         aria-expanded={mobileOpen}
         aria-controls="mobile-pill-nav"
         aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
@@ -273,7 +273,7 @@ export function PillDropdownNav({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-[rgba(17,17,17,0.96)] backdrop-blur-md lg:hidden"
+            className="fixed inset-0 z-40 bg-[rgba(7,24,44,0.97)] backdrop-blur-md lg:hidden"
           >
             <motion.nav
               initial={{ y: -12, opacity: 0 }}
@@ -294,7 +294,7 @@ export function PillDropdownNav({
                     initial={{ x: -16, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.04 * index }}
-                    className="border-b border-white/10"
+                    className="border-b border-offwhite/10"
                   >
                     {hasChildren ? (
                       <>
@@ -303,8 +303,8 @@ export function PillDropdownNav({
                           className={cn(
                             "flex w-full items-center justify-between py-4 text-left font-display text-2xl tracking-wide",
                             active || sectionOpen
-                              ? "text-white"
-                              : "text-white/75"
+                              ? "text-offwhite"
+                              : "text-offwhite/75"
                           )}
                           aria-expanded={sectionOpen}
                           onClick={() =>
@@ -321,8 +321,8 @@ export function PillDropdownNav({
                           </span>
                           <ChevronDown
                             className={cn(
-                              "h-5 w-5 text-white/45 transition-transform",
-                              sectionOpen && "rotate-180"
+                              "h-5 w-5 text-offwhite/45 transition-transform",
+                              sectionOpen && "rotate-180 text-amber-tech"
                             )}
                           />
                         </button>
@@ -338,7 +338,7 @@ export function PillDropdownNav({
                                 <li key={child.href}>
                                   <Link
                                     href={child.href}
-                                    className="block rounded-xl px-1 py-2.5 text-sm text-white/70 transition-colors hover:text-white"
+                                    className="block rounded-xl px-1 py-2.5 text-sm text-offwhite/70 transition-colors hover:text-amber-tech"
                                   >
                                     {child.label}
                                   </Link>
@@ -360,8 +360,8 @@ export function PillDropdownNav({
                       <Link
                         href={item.href}
                         className={cn(
-                          "block py-4 font-display text-2xl tracking-wide text-white/75",
-                          active && "text-white"
+                          "block py-4 font-display text-2xl tracking-wide text-offwhite/75",
+                          active && "text-offwhite"
                         )}
                       >
                         {item.label}
@@ -377,7 +377,7 @@ export function PillDropdownNav({
               <div className="mt-8 flex flex-col gap-3">
                 <a
                   href={`tel:${SITE.phoneTel}`}
-                  className="inline-flex items-center gap-2 text-base font-medium text-white"
+                  className="inline-flex items-center gap-2 text-base font-medium text-offwhite"
                 >
                   <Phone className="h-4 w-4 text-amber-tech" aria-hidden />
                   {SITE.phoneDisplay}
