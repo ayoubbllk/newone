@@ -1,9 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2, Send } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -24,72 +23,32 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import {
-  contactFormSchema,
-  type ContactFormValues,
+  buildWhatsAppContactMessage,
+  contactWhatsAppSchema,
+  type ContactWhatsAppValues,
 } from "@/lib/contact-schema";
 import { SERVICES } from "@/lib/services";
+import { buildWhatsAppUrl } from "@/lib/site";
 
 export function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
-  const [serverMessage, setServerMessage] = useState("");
-
-  const form = useForm<ContactFormValues>({
-    resolver: zodResolver(contactFormSchema),
+  const form = useForm<ContactWhatsAppValues>({
+    resolver: zodResolver(contactWhatsAppSchema),
     defaultValues: {
       name: "",
       phone: "",
-      email: "",
       service: undefined,
       message: "",
     },
   });
 
-  async function onSubmit(values: ContactFormValues) {
-    setStatus("idle");
-    setServerMessage("");
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-      });
-
-      const data = (await res.json()) as { ok?: boolean; message?: string };
-
-      if (!res.ok || !data.ok) {
-        setStatus("error");
-        setServerMessage(
-          data.message || "Une erreur est survenue. Réessayez ou contactez-nous par téléphone."
-        );
-        return;
-      }
-
-      setStatus("success");
-      setServerMessage(
-        data.message ||
-          "Message bien reçu. Nous vous recontacterons rapidement."
-      );
-      form.reset({
-        name: "",
-        phone: "",
-        email: "",
-        service: undefined,
-        message: "",
-      });
-    } catch {
-      setStatus("error");
-      setServerMessage(
-        "Impossible d’envoyer le message pour le moment. Appelez le 0661 10 07 03."
-      );
-    }
+  function onSubmit(values: ContactWhatsAppValues) {
+    const text = buildWhatsAppContactMessage(values);
+    window.open(buildWhatsAppUrl(text), "_blank", "noopener,noreferrer");
   }
-
-  const pending = form.formState.isSubmitting;
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 text-left">
         <FormField
           control={form.control}
           name="name"
@@ -97,52 +56,35 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Nom</FormLabel>
               <FormControl>
-                <Input placeholder="Votre nom et prénom" autoComplete="name" {...field} />
+                <Input
+                  placeholder="Votre nom et prénom"
+                  autoComplete="name"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
 
-        <div className="grid gap-5 sm:grid-cols-2">
-          <FormField
-            control={form.control}
-            name="phone"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Téléphone</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="06 XX XX XX XX"
-                    type="tel"
-                    autoComplete="tel"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>E-mail</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="vous@exemple.com"
-                    type="email"
-                    autoComplete="email"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        </div>
+        <FormField
+          control={form.control}
+          name="phone"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Téléphone</FormLabel>
+              <FormControl>
+                <Input
+                  placeholder="06 XX XX XX XX"
+                  type="tel"
+                  autoComplete="tel"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
 
         <FormField
           control={form.control}
@@ -175,10 +117,10 @@ export function ContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              <FormLabel>Votre besoin</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Décrivez votre chantier, la localisation et le type d’essai souhaité…"
+                  placeholder="Décrivez votre chantier, la localisation et le type d’essai…"
                   className="min-h-[140px]"
                   {...field}
                 />
@@ -193,37 +135,15 @@ export function ContactForm() {
           variant="cta"
           size="lg"
           className="w-full font-semibold sm:w-auto"
-          disabled={pending}
         >
-          {pending ? (
-            <>
-              <Loader2 className="h-4 w-4 animate-spin" />
-              Envoi en cours…
-            </>
-          ) : (
-            <>
-              <Send className="h-4 w-4" />
-              Envoyer le message
-            </>
-          )}
+          <MessageCircle className="h-4 w-4" />
+          Envoyer sur WhatsApp
         </Button>
 
-        {status === "success" && (
-          <p
-            role="status"
-            className="border border-navy/15 bg-offwhite px-4 py-3 text-sm text-navy"
-          >
-            {serverMessage}
-          </p>
-        )}
-        {status === "error" && (
-          <p
-            role="alert"
-            className="border border-red-accent/30 bg-red-accent/5 px-4 py-3 text-sm text-red-accent"
-          >
-            {serverMessage}
-          </p>
-        )}
+        <p className="text-xs leading-relaxed text-slate-text">
+          Le message s’ouvre directement dans WhatsApp, prêt à être envoyé à
+          LEAGB ({SERVICES.length} services + demande générale).
+        </p>
       </form>
     </Form>
   );

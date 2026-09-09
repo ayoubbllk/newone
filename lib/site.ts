@@ -1,13 +1,21 @@
 export const SITE = {
   name: "LEAGB",
   fullName: "Laboratoire Géotechnique",
-  baseline: "Contrôle béton & géotechnique",
+  baseline: "Étude de sol & contrôle béton — Algérie",
   phoneDisplay: "0661 10 07 03",
   phoneTel: "+213661100703",
   whatsappNumber: "213661100703",
   address: "Centre Commercial Chéraga, Qods Étage R, Alger",
   email: null as string | null,
 } as const;
+
+/** Audiences B2B prioritaires (SEO + copy) */
+export const TARGET_AUDIENCES = [
+  "promoteurs immobiliers",
+  "bureaux d’études génie civil",
+  "architectes",
+  "entreprises de travaux publics et de bâtiment",
+] as const;
 
 export const NAV_LINKS = [
   { href: "/", label: "Accueil" },
@@ -24,7 +32,7 @@ export const SOCIAL_LINKS = [
 ] as const;
 
 export const DEFAULT_WHATSAPP_MESSAGE =
-  "Bonjour LEAGB, je souhaite obtenir des informations sur vos prestations géotechniques et contrôle béton.";
+  "Bonjour LEAGB, je souhaite un devis (étude de sol / contrôle béton / injection fissure béton) pour mon projet en Algérie.";
 
 export function buildWhatsAppUrl(message?: string) {
   const text = encodeURIComponent(message?.trim() || DEFAULT_WHATSAPP_MESSAGE);

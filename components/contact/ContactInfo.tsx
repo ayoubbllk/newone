@@ -14,8 +14,8 @@ export function ContactInfo() {
           Parlons de votre chantier
         </h2>
         <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-navy-foreground/75">
-          Réponse rapide par téléphone ou WhatsApp. Décrivez le type d’essai et
-          la localisation : nous vous orientons vers le bon protocole.
+          Remplissez le formulaire : WhatsApp s’ouvre avec votre message prêt à
+          envoyer. Vous pouvez aussi appeler directement.
         </p>
       </div>
 

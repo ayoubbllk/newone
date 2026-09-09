@@ -59,11 +59,11 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "fissures-setif",
-    title: "Injection de fissures immeuble R+4",
+    title: "Injection fissure béton immeuble R+4",
     wilaya: "Sétif",
     serviceId: "injection-beton",
     summary:
-      "Traitement par injection (technologie allemande) de fissures actives en façade et plancher.",
+      "Injection fissure béton (technologie allemande) sur fissures actives en façade et plancher.",
     imageKey: "injection",
   },
 ];

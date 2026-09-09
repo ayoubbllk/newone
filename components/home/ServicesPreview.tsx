@@ -112,8 +112,9 @@ export function ServicesPreview({ slides }: ServicesPreviewProps) {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
           className="section-header mb-10 text-base font-medium leading-snug tracking-tight text-white/70 sm:mb-14 sm:text-xl lg:text-2xl"
         >
-          Du contrôle béton aux sondages pressiométriques, LEAGB intervient sur
-          chantier et en laboratoire avec un matériel professionnel.
+          Du contrôle béton à l’étude de sol et à l’injection fissure béton,
+          LEAGB intervient en Algérie pour promoteurs, BE génie civil,
+          architectes et entreprises TP / bâtiment.
         </motion.p>
 
         {/* Columns: preview card + list */}

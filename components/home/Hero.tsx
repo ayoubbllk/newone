@@ -107,9 +107,9 @@ export function Hero({ curvedImages }: HeroProps) {
             transition={{ duration: 0.55, delay: 0.08 }}
             className="mt-4 text-balance text-[1.85rem] font-bold leading-[1.1] tracking-tight text-navy-foreground sm:text-4xl md:text-5xl lg:text-6xl"
           >
-            Géotechnique et contrôle béton,{" "}
+            Laboratoire géotechnique{" "}
             <span className="bg-gradient-to-r from-white via-amber-tech/90 to-white bg-clip-text text-transparent">
-              mesurés avec précision
+              à Alger
             </span>
           </motion.h1>
 
@@ -119,8 +119,9 @@ export function Hero({ curvedImages }: HeroProps) {
             transition={{ duration: 0.55, delay: 0.16 }}
             className="mt-5 max-w-xl text-sm leading-relaxed text-navy-foreground/80 sm:text-base lg:text-lg"
           >
-            Laboratoire à Chéraga : essais normés, sondages pressiométriques et
-            diagnostic structurel pour sécuriser vos chantiers en Algérie.
+            LEAGB à Chéraga : essais terrain et laboratoire pour promoteurs,
+            bureaux d’études, architectes et entreprises TP / bâtiment en
+            Algérie.
           </motion.p>
 
           <motion.div

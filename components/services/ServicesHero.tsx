@@ -16,12 +16,13 @@ export function ServicesHero() {
             Services
           </p>
           <h1 className="mt-4 text-balance text-3xl font-bold tracking-tight text-navy-foreground sm:text-4xl lg:text-5xl">
-            Essais géotechniques et contrôle béton, du terrain au laboratoire
+            Services géotechniques et béton — catalogue LEAGB
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-navy-foreground/75 sm:text-base lg:text-lg">
-            Cinq expertises pour sécuriser vos fondations, contrôler vos bétons
-            et traiter les désordres structurels — avec un matériel professionnel
-            et une lecture claire des résultats.
+            Choisissez la mission adaptée à votre chantier : pages dédiées pour
+            les expertises clés, protocoles détaillés pour les essais
+            complémentaires — promoteurs, BE génie civil, architectes et
+            entreprises TP / bâtiment.
           </p>
         </Reveal>
 
@@ -29,17 +30,25 @@ export function ServicesHero() {
           delay={0.1}
           className="mt-8 flex flex-wrap justify-center gap-2 sm:mt-10"
         >
-          {SERVICES.map((service) => (
-            <a
-              key={service.id}
-              href={`#${service.id}`}
-              className={cn(
-                "border border-white/15 px-3 py-2 text-sm text-navy-foreground/80 transition-colors hover:border-amber-tech/50 hover:text-navy-foreground"
-              )}
-            >
-              {service.title}
-            </a>
-          ))}
+          {SERVICES.map((service) => {
+            const isLanding = service.href.startsWith("/services/");
+            const Comp = isLanding ? Link : "a";
+            const linkProps = isLanding
+              ? { href: service.href }
+              : { href: `#${service.id}` };
+
+            return (
+              <Comp
+                key={service.id}
+                {...linkProps}
+                className={cn(
+                  "border border-white/15 px-3 py-2 text-sm text-navy-foreground/80 transition-colors hover:border-amber-tech/50 hover:text-navy-foreground"
+                )}
+              >
+                {service.title}
+              </Comp>
+            );
+          })}
         </Reveal>
 
         <Reveal delay={0.15} className="mt-8 text-center">

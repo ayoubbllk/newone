@@ -16,8 +16,9 @@ export function Footer() {
         <div className="flex flex-col items-center md:items-start lg:col-span-1">
           <BrandLogo size="md" />
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-navy-foreground/70">
-            {SITE.fullName} à Chéraga — essais normés, diagnostic structurel et
-            accompagnement technique pour vos projets BTP.
+            {SITE.fullName} à Chéraga — étude de sol, contrôle béton et
+            injection fissure béton pour promoteurs, BE génie civil, architectes
+            et entreprises TP / bâtiment en Algérie.
           </p>
         </div>
 

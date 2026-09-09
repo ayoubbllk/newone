@@ -37,9 +37,9 @@ export function FinalCta() {
             Un essai, un diagnostic, un devis clair
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-navy-foreground/75 sm:text-base lg:text-lg">
-            Décrivez votre chantier : nous vous orientons vers le bon protocole
-            — contrôle béton, étude de sol, pressiomètre ou injection de
-            fissures.
+            Décrivez votre chantier en Algérie : étude de sol, étude de
+            stabilité, contrôle béton, pressiomètre ou injection fissure béton —
+            pour promoteurs, BE génie civil, architectes et entreprises BTP.
           </p>
           <div className="mt-9 flex w-full flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
             <Button asChild variant="cta" size="lg" className="w-full sm:w-auto">

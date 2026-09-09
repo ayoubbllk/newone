@@ -57,7 +57,7 @@ export default function HomePage() {
     {
       title: "Contrôle béton ouvrage d’art",
       wilaya: "Blida",
-      service: "Contrôle qualité du béton",
+      service: "Contrôle béton",
       image:
         servicePhotos["controle-beton"]?.src ?? "/designe/banner.png",
     },

@@ -255,6 +255,17 @@
     @apply border-amber-tech bg-amber-tech text-navy;
     transform: scale(1.06);
   }
+
+  /* Grille blueprint — landings service industrie / construction */
+  .industrial-blueprint {
+    background-image:
+      linear-gradient(rgba(232, 162, 39, 0.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(232, 162, 39, 0.12) 1px, transparent 1px),
+      linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 80px 80px, 80px 80px, 16px 16px, 16px 16px;
+    mask-image: radial-gradient(ellipse 75% 70% at 60% 40%, black, transparent);
+  }
 }
 
 @layer utilities {

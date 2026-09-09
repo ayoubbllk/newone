@@ -3,6 +3,7 @@ import { ContactInfo } from "@/components/contact/ContactInfo";
 import { ContactMap } from "@/components/contact/ContactMap";
 import { Reveal } from "@/components/motion/Reveal";
 import { PAGE_SEO } from "@/lib/seo";
+import { SITE } from "@/lib/site";
 
 export const metadata = PAGE_SEO.contact;
 
@@ -16,11 +17,11 @@ export default function ContactPage() {
               Contact
             </p>
             <h1 className="mt-4 text-balance text-3xl font-bold tracking-tight text-navy-foreground sm:text-4xl lg:text-5xl">
-              Demandez un devis ou un essai
+              Demandez un devis sur WhatsApp
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-navy-foreground/75 sm:text-base">
-              Formulaire, téléphone ou WhatsApp — indiquez le service et la
-              localisation de votre chantier, nous vous rappelons.
+              Remplissez le formulaire : le message s’ouvre dans WhatsApp, prêt
+              à envoyer au {SITE.phoneDisplay}.
             </p>
           </Reveal>
         </div>
@@ -36,13 +37,13 @@ export default function ContactPage() {
           </Reveal>
 
           <Reveal delay={0.08} className="lg:col-span-7">
-            <div className="border border-navy/10 bg-white p-5 text-center sm:p-8">
-              <h2 className="font-display text-xl font-semibold text-navy sm:text-2xl">
-                Envoyez-nous un message
+            <div className="border border-navy/10 bg-white p-5 sm:p-8">
+              <h2 className="text-center font-display text-xl font-semibold text-navy sm:text-2xl">
+                Message WhatsApp
               </h2>
-              <p className="mx-auto mt-2 max-w-xl text-sm text-slate-text">
-                Tous les champs sont obligatoires. Nous utilisons vos
-                coordonnées uniquement pour répondre à votre demande.
+              <p className="mx-auto mt-2 max-w-xl text-center text-sm text-slate-text">
+                Aucun e-mail serveur : votre demande part directement via
+                WhatsApp vers LEAGB.
               </p>
               <div className="mt-8">
                 <ContactForm />

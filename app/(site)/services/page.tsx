@@ -20,6 +20,7 @@ export default function ServicesPage() {
           service={service}
           index={index}
           image={photos[service.id]}
+          summary={service.href.startsWith("/services/")}
         />
       ))}
       <ServicesFaq />

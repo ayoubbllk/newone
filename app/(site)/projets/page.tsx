@@ -18,6 +18,7 @@ export default function ProjetsPage() {
       ...project,
       image: photo?.src ?? "/designe/banner.png",
       serviceLabel: service?.title ?? project.serviceId,
+      serviceHref: service?.href ?? "/services",
     };
   });
 

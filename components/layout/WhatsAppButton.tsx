@@ -44,12 +44,12 @@ export function WhatsAppButton({ message, className }: WhatsAppButtonProps) {
       whileHover={{ scale: 1.06 }}
       whileTap={{ scale: 0.96 }}
       className={cn(
-        "fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_10px_28px_rgba(37,211,102,0.45)] transition-shadow hover:shadow-[0_14px_32px_rgba(37,211,102,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-tech focus-visible:ring-offset-2 focus-visible:ring-offset-offwhite sm:bottom-6 sm:right-6",
+        "fixed bottom-5 right-5 z-50 flex h-[4.25rem] w-[4.25rem] items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_12px_32px_rgba(37,211,102,0.5)] transition-shadow hover:shadow-[0_16px_40px_rgba(37,211,102,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-tech focus-visible:ring-offset-2 focus-visible:ring-offset-offwhite sm:bottom-7 sm:right-7 sm:h-20 sm:w-20",
         className
       )}
     >
       <span className="absolute inset-0 animate-ping rounded-full bg-[#25D366]/35 [animation-duration:2.4s]" />
-      <WhatsAppGlyph className="relative h-7 w-7" />
+      <WhatsAppGlyph className="relative h-9 w-9 sm:h-10 sm:w-10" />
     </motion.a>
   );
 }

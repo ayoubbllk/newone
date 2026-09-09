@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { getAllPosts } from "@/lib/blog";
+import { getAllLandingSlugs } from "@/lib/serviceLandings";
 
 const BASE = "https://leagb.dz";
 
@@ -33,6 +34,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  const landings = getAllLandingSlugs().map((slug) => ({
+    url: `${BASE}/services/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.95,
+  }));
+
   const posts = getAllPosts().map((post) => ({
     url: `${BASE}/blog/${post.slug}`,
     lastModified: new Date(post.date),
@@ -40,5 +48,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...posts];
+  return [...staticRoutes, ...landings, ...posts];
 }

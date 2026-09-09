@@ -10,8 +10,8 @@ export default function SiteLayout({
   return (
     <>
       <Header />
-      {/* pb-24 : dégagement pour le bouton WhatsApp flottant */}
-      <main className="min-h-[60vh] pb-24">{children}</main>
+      {/* pb-28 : dégagement pour le bouton WhatsApp flottant agrandi */}
+      <main className="min-h-[60vh] pb-28 sm:pb-32">{children}</main>
       <Footer />
       <WhatsAppButton />
     </>

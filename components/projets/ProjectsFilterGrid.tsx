@@ -11,7 +11,11 @@ import type { Project } from "@/lib/projects";
 import { SERVICES, type ServiceId } from "@/lib/services";
 import { cn } from "@/lib/utils";
 
-export type ProjectWithImage = Project & { image: string; serviceLabel: string };
+export type ProjectWithImage = Project & {
+  image: string;
+  serviceLabel: string;
+  serviceHref: string;
+};
 
 type ProjectsFilterGridProps = {
   projects: ProjectWithImage[];
@@ -103,7 +107,7 @@ export function ProjectsFilterGrid({ projects }: ProjectsFilterGridProps) {
                     {project.summary}
                   </p>
                   <Link
-                    href={`/services#${project.serviceId}`}
+                    href={project.serviceHref}
                     className="mt-5 inline-flex text-sm font-semibold text-navy transition-colors hover:text-red-accent"
                   >
                     Voir le service associé

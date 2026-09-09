@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 
 import { SITE } from "@/lib/site";
 
-const baseDescription =
-  "Laboratoire géotechnique à Chéraga (Alger) : contrôle qualité béton, essai ultrasonique, étude de sol, sondage pressiométrique APAGEO, injection de fissures.";
-
 export function pageMetadata({
   title,
   description,
@@ -32,31 +29,34 @@ export function pageMetadata({
 
 export const PAGE_SEO = {
   home: pageMetadata({
-    title: "Laboratoire Géotechnique — Contrôle béton & essais",
-    description: `${baseDescription} Tél. ${SITE.phoneDisplay}.`,
+    title: "Laboratoire géotechnique à Alger — LEAGB Chéraga",
+    description:
+      "Laboratoire géotechnique LEAGB à Chéraga (Alger) : essais terrain et laboratoire pour promoteurs, bureaux d’études génie civil, architectes et entreprises TP / bâtiment en Algérie. Tél. " +
+      SITE.phoneDisplay +
+      ".",
     path: "/",
   }),
   services: pageMetadata({
-    title: "Services — Essais géotechniques & contrôle béton",
+    title: "Services géotechniques & béton — catalogue LEAGB",
     description:
-      "Contrôle qualité béton, essai ultrasonique, étude de sol et stabilité, sondage pressiométrique APAGEO, injection de fissures. Devis à Chéraga, Alger.",
+      "Catalogue des missions LEAGB en Algérie : reconnaissance géotechnique, essais béton, sondages pressiométriques et diagnostic structurel. Orienter vers la page dédiée selon votre besoin.",
     path: "/services",
   }),
   projets: pageMetadata({
-    title: "Projets & chantiers accompagnés",
+    title: "Projets géotechniques & contrôle béton — Algérie",
     description:
-      "Exemples de missions LEAGB en Algérie : études de sol, contrôles béton, pressiomètre et réparation de fissures.",
+      "Missions LEAGB en Algérie : étude de sol, étude de stabilité, contrôle béton et injection de fissures pour chantiers promotion, TP et bâtiment.",
     path: "/projets",
   }),
   blog: pageMetadata({
-    title: "Blog technique — Géotechnique & béton",
+    title: "Blog — Étude de sol & béton en Algérie",
     description:
-      "Articles LEAGB : étude de sol, fissures de béton, essai pressiométrique Ménard — repères pour promoteurs et entreprises BTP.",
+      "Guides techniques LEAGB : étude de sol, contrôle béton, fissures et pressiomètre — pour promoteurs, bureaux d’études, architectes et entreprises BTP en Algérie.",
     path: "/blog",
   }),
   contact: pageMetadata({
-    title: "Contact & devis",
-    description: `Contactez LEAGB à Chéraga (Alger) : téléphone / WhatsApp ${SITE.phoneDisplay}. Demande de devis pour essais géotechniques et contrôle béton.`,
+    title: "Devis WhatsApp — étude de sol & contrôle béton",
+    description: `Contactez LEAGB à Chéraga (Alger) par WhatsApp ${SITE.phoneDisplay}. Formulaire prêt à envoyer : étude de sol, contrôle béton ou injection fissure béton.`,
     path: "/contact",
   }),
 } as const;

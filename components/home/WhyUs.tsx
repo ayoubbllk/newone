@@ -47,8 +47,9 @@ export function WhyUs() {
             Un laboratoire technique, pas un simple prestataire d’essais
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-text sm:text-base">
-            LEAGB combine mesure, diagnostic et accompagnement pour les
-            promoteurs, entreprises de BTP et particuliers exigeants.
+            LEAGB combine mesure, diagnostic et accompagnement en Algérie pour
+            les promoteurs immobiliers, bureaux d’études génie civil,
+            architectes et entreprises de travaux publics et de bâtiment.
           </p>
         </Reveal>
 
