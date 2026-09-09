@@ -10,11 +10,15 @@ import {
   type CurvedImage,
 } from "@/components/home/CurvedImageLine";
 import { Button } from "@/components/ui/button";
+import { FEATURED_SERVICES } from "@/lib/services";
 import { SITE } from "@/lib/site";
 
 type HeroProps = {
   curvedImages: CurvedImage[];
 };
+
+const HERO_PILL_CLASS =
+  "inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-sm font-medium text-navy-foreground/90 backdrop-blur-sm transition-all duration-300 hover:border-amber-tech/50 hover:bg-white/10 hover:text-navy-foreground";
 
 function useHeroCurve() {
   const [curve, setCurve] = useState({
@@ -114,9 +118,26 @@ export function Hero({ curvedImages }: HeroProps) {
           </motion.h1>
 
           <motion.div
+            initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.14 }}
+            className="mt-5 flex w-full max-w-2xl flex-wrap items-center justify-center gap-2"
+          >
+            {FEATURED_SERVICES.map((service) => (
+              <Link
+                key={service.id}
+                href={service.href}
+                className={HERO_PILL_CLASS}
+              >
+                {service.title}
+              </Link>
+            ))}
+          </motion.div>
+
+          <motion.div
             initial={reduceMotion ? false : { opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.16 }}
+            transition={{ duration: 0.55, delay: 0.22 }}
             className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center"
           >
             <Button asChild variant="cta" size="lg" className="w-full sm:w-auto">
@@ -154,7 +175,7 @@ export function Hero({ curvedImages }: HeroProps) {
                 <a
                   key={phone.tel}
                   href={`tel:${phone.tel}`}
-                  className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-sm font-medium text-navy-foreground/90 backdrop-blur-sm transition-all duration-300 hover:border-amber-tech/50 hover:bg-white/10 hover:text-navy-foreground"
+                  className={HERO_PILL_CLASS}
                 >
                   {phone.display}
                 </a>

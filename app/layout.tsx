@@ -29,6 +29,11 @@ export const metadata: Metadata = {
     "Alger",
     "LEAGB",
   ],
+  icons: {
+    icon: [{ url: "/Logo.jpeg", type: "image/jpeg" }],
+    apple: [{ url: "/Logo.jpeg", type: "image/jpeg" }],
+    shortcut: "/Logo.jpeg",
+  },
   openGraph: {
     type: "website",
     locale: "fr_DZ",
