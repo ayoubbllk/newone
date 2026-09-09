@@ -23,11 +23,12 @@ type ProjectsFilterGridProps = {
 
 const FILTER_LABELS: Record<ServiceId | "all", string> = {
   all: "Tous",
-  "controle-beton": "Contrôle béton",
-  ultrasonique: "Essai ultrasonique",
   "etude-sol": "Étude de sol",
+  "etude-stabilite": "Étude de stabilité",
+  "controle-beton": "Contrôle béton",
+  "injection-beton": "Traitement et injection des fissures de béton",
+  ultrasonique: "Essai ultrasonique",
   pressiometre: "Pressiomètre",
-  "injection-beton": "Injection fissures",
 };
 
 export function ProjectsFilterGrid({ projects }: ProjectsFilterGridProps) {

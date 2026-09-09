@@ -375,13 +375,19 @@ export function PillDropdownNav({
               })}
 
               <div className="mt-8 flex flex-col gap-3">
-                <a
-                  href={`tel:${SITE.phoneTel}`}
-                  className="inline-flex items-center gap-2 text-base font-medium text-offwhite"
-                >
-                  <Phone className="h-4 w-4 text-amber-tech" aria-hidden />
-                  {SITE.phoneDisplay}
-                </a>
+                {SITE.phones.map((phone) => (
+                  <a
+                    key={phone.tel}
+                    href={`tel:${phone.tel}`}
+                    className="inline-flex items-center gap-2 text-base font-medium text-offwhite"
+                  >
+                    <Phone className="h-4 w-4 text-amber-tech" aria-hidden />
+                    {phone.display}
+                  </a>
+                ))}
+                <p className="text-sm text-offwhite/60">
+                  WhatsApp · {SITE.phoneDisplay}
+                </p>
                 <Button asChild variant="cta" size="lg" className="w-full font-semibold">
                   <Link href="/contact">Nous contacter</Link>
                 </Button>

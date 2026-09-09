@@ -58,13 +58,18 @@ export function FinalCta() {
               </a>
             </Button>
           </div>
-          <a
-            href={`tel:${SITE.phoneTel}`}
-            className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm text-navy-foreground/75 backdrop-blur-sm transition-all duration-300 hover:border-amber-tech/40 hover:bg-white/10 hover:text-navy-foreground"
-          >
-            <Phone className="h-4 w-4 text-amber-tech" aria-hidden />
-            {SITE.phoneDisplay}
-          </a>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
+            {SITE.phones.map((phone) => (
+              <a
+                key={phone.tel}
+                href={`tel:${phone.tel}`}
+                className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm text-navy-foreground/75 backdrop-blur-sm transition-all duration-300 hover:border-amber-tech/40 hover:bg-white/10 hover:text-navy-foreground"
+              >
+                <Phone className="h-4 w-4 text-amber-tech" aria-hidden />
+                {phone.display}
+              </a>
+            ))}
+          </div>
         </Reveal>
       </div>
     </section>

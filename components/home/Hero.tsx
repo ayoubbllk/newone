@@ -107,7 +107,7 @@ export function Hero({ curvedImages }: HeroProps) {
             transition={{ duration: 0.55, delay: 0.08 }}
             className="mt-4 text-balance text-[1.85rem] font-bold leading-[1.1] tracking-tight text-navy-foreground sm:text-4xl md:text-5xl lg:text-6xl"
           >
-            Laboratoire géotechnique{" "}
+            Laboratoire géotechnique et béton{" "}
             <span className="bg-gradient-to-r from-white via-amber-tech/90 to-white bg-clip-text text-transparent">
               à Alger
             </span>
@@ -146,20 +146,32 @@ export function Hero({ curvedImages }: HeroProps) {
             </Button>
           </motion.div>
 
-          <motion.a
-            href={`tel:${SITE.phoneTel}`}
+          <motion.div
             initial={reduceMotion ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="mt-8 inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm text-navy-foreground/80 backdrop-blur-sm transition-all duration-300 hover:border-amber-tech/50 hover:bg-white/10 hover:text-navy-foreground"
+            className="mt-8 flex w-full max-w-lg flex-col items-center gap-2"
           >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-tech opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-tech" />
-            </span>
-            <Phone className="h-4 w-4 text-amber-tech" aria-hidden />
-            Appelez-nous : {SITE.phoneDisplay}
-          </motion.a>
+            <p className="inline-flex items-center gap-2 text-sm text-navy-foreground/70">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-tech opacity-60" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-tech" />
+              </span>
+              <Phone className="h-4 w-4 text-amber-tech" aria-hidden />
+              Appelez-nous
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              {SITE.phones.map((phone) => (
+                <a
+                  key={phone.tel}
+                  href={`tel:${phone.tel}`}
+                  className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-sm font-medium text-navy-foreground/90 backdrop-blur-sm transition-all duration-300 hover:border-amber-tech/50 hover:bg-white/10 hover:text-navy-foreground"
+                >
+                  {phone.display}
+                </a>
+              ))}
+            </div>
+          </motion.div>
         </div>
 
         <motion.div

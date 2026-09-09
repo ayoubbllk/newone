@@ -27,6 +27,11 @@ const PHOTO_RULES: {
     prefer: /\+/,
   },
   {
+    id: "etude-stabilite",
+    match: /[ée]tude de sol|stabilit/i,
+    prefer: /\+/,
+  },
+  {
     id: "pressiometre",
     match: /sondage pressiom/i,
   },

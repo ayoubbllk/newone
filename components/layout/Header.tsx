@@ -58,13 +58,18 @@ export function Header() {
 
         <div className="relative z-50 flex items-center gap-3">
           <div className="hidden items-center gap-3 lg:flex">
-            <a
-              href={`tel:${SITE.phoneTel}`}
-              className="inline-flex items-center gap-2 text-sm font-medium text-navy/80 transition-colors hover:text-navy"
-            >
-              <Phone className="h-4 w-4 text-amber-tech" aria-hidden />
-              <span>{SITE.phoneDisplay}</span>
-            </a>
+            <div className="flex flex-col items-end gap-0.5">
+              {SITE.phones.map((phone) => (
+                <a
+                  key={phone.tel}
+                  href={`tel:${phone.tel}`}
+                  className="inline-flex items-center gap-1.5 text-xs font-medium text-navy/80 transition-colors hover:text-navy sm:text-sm"
+                >
+                  <Phone className="h-3.5 w-3.5 text-amber-tech" aria-hidden />
+                  <span>{phone.display}</span>
+                </a>
+              ))}
+            </div>
             <Button asChild variant="cta" size="sm" className="font-semibold">
               <Link href="/contact">Nous contacter</Link>
             </Button>

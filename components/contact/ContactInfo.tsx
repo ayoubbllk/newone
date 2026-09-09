@@ -21,27 +21,30 @@ export function ContactInfo() {
 
       <ul className="space-y-5 text-sm text-navy-foreground/80">
         <li>
-          <a
-            href={`tel:${SITE.phoneTel}`}
-            className="inline-flex items-start justify-center gap-3 transition-colors hover:text-navy-foreground"
-          >
+          <div className="inline-flex items-start justify-center gap-3">
             <Phone className="mt-0.5 h-5 w-5 shrink-0 text-amber-tech" aria-hidden />
             <span>
               <span className="block text-xs uppercase tracking-[0.14em] text-navy-foreground/55">
-                Téléphone / WhatsApp
+                Téléphone
               </span>
-              <span className="mt-1 block font-display text-lg font-semibold text-navy-foreground">
-                {SITE.phoneDisplay}
-              </span>
+              {SITE.phones.map((phone) => (
+                <a
+                  key={phone.tel}
+                  href={`tel:${phone.tel}`}
+                  className="mt-1 block font-display text-lg font-semibold text-navy-foreground transition-colors hover:text-amber-tech"
+                >
+                  {phone.display}
+                </a>
+              ))}
             </span>
-          </a>
+          </div>
           <a
             href={buildWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 inline-block text-sm font-medium text-navy-foreground underline-offset-4 hover:underline"
+            className="mt-3 inline-block text-sm font-medium text-navy-foreground underline-offset-4 hover:underline"
           >
-            Ouvrir WhatsApp
+            WhatsApp · {SITE.phoneDisplay}
           </a>
         </li>
 

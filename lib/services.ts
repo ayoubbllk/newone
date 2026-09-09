@@ -1,5 +1,47 @@
 export const SERVICES = [
   {
+    id: "etude-sol",
+    title: "Étude de sol",
+    short:
+      "Étude de sol en Algérie pour caractériser le terrain et sécuriser les fondations.",
+    href: "/services/etude-de-sol",
+    icon: "soil" as const,
+    imageMatch: "étude de sol|etude de sol",
+    featured: true,
+    description:
+      "Avant de fonder un bâtiment, un lotissement ou un ouvrage d’art, l’étude de sol caractérise la nature des terrains, leur portance et les risques (tassements, nappe, hétérogénéités). LEAGB accompagne promoteurs immobiliers, architectes et bureaux d’études génie civil en Algérie.",
+    checks: [
+      "Nature et succession des couches de sol",
+      "Paramètres utiles au dimensionnement des fondations",
+      "Risques de tassement et sensibilité à l’eau",
+      "Recommandations techniques pour le projet",
+      "Rapport exploitable par votre bureau d’études",
+    ],
+    whatsappMessage:
+      "Bonjour LEAGB, je souhaite demander une étude de sol pour mon projet en Algérie.",
+  },
+  {
+    id: "etude-stabilite",
+    title: "Étude de stabilité",
+    short:
+      "Étude de stabilité (talus, remblais, excavations) pour sécuriser vos terrassements.",
+    href: "/services/etude-de-sol",
+    icon: "soil" as const,
+    imageMatch: "étude de sol|etude de sol|stabilit",
+    featured: true,
+    description:
+      "L’étude de stabilité évalue la tenue des talus, remblais et excavations. LEAGB fournit les paramètres et recommandations pour dimensionner les soutènements et limiter les aléas géotechniques — missions destinées aux promoteurs, BE génie civil et entreprises TP / bâtiment en Algérie.",
+    checks: [
+      "Stabilité de talus, remblais ou excavations",
+      "Analyse des facteurs de sécurité",
+      "Recommandations de soutènement",
+      "Calage des hypothèses de calcul",
+      "Accompagnement pour phases critiques de terrassement",
+    ],
+    whatsappMessage:
+      "Bonjour LEAGB, je souhaite demander une étude de stabilité pour mon projet en Algérie.",
+  },
+  {
     id: "controle-beton",
     title: "Contrôle béton",
     short:
@@ -7,6 +49,7 @@ export const SERVICES = [
     href: "/services/controle-beton",
     icon: "concrete" as const,
     imageMatch: "vérification.*qualité|verification.*qualite",
+    featured: true,
     description:
       "Le contrôle béton vérifie que le matériau mis en œuvre répond aux spécifications du projet : résistance mécanique, homogénéité et conformité des formulations. LEAGB réalise des prélèvements et essais en laboratoire (compression sur éprouvettes) ainsi qu’un suivi adapté aux phases critiques du coulage en Algérie — pour promoteurs immobiliers, entreprises de travaux publics et de bâtiment, et maîtres d’ouvrage.",
     checks: [
@@ -20,6 +63,27 @@ export const SERVICES = [
       "Bonjour LEAGB, je souhaite demander un contrôle béton pour mon chantier en Algérie.",
   },
   {
+    id: "injection-beton",
+    title: "Traitement et injection des fissures de béton",
+    short:
+      "Traitement et injection des fissures de béton (technologie allemande) : colmatage et consolidation.",
+    href: "/services/injection-fissure-beton",
+    icon: "inject" as const,
+    imageMatch: "fissures|injection",
+    featured: true,
+    description:
+      "Le traitement et l’injection des fissures de béton traitent les désordres liés au retrait, aux mouvements différentiels ou à un dysfonctionnement structurel. LEAGB propose un traitement par injection selon une technologie allemande : diagnostic, choix de la résine adaptée, injection contrôlée pour colmater, consolider et, selon le cas, rétablir l’étanchéité. Destiné aux promoteurs, entreprises de bâtiment et architectes en Algérie.",
+    checks: [
+      "Nature et activité des fissures (stables / évolutives)",
+      "Choix du produit d’injection adapté au désordre",
+      "Colmatage et consolidation des fissures",
+      "Amélioration de l’étanchéité lorsque requis",
+      "Recommandations de suivi après intervention",
+    ],
+    whatsappMessage:
+      "Bonjour LEAGB, je souhaite demander un traitement / injection des fissures de béton pour mon ouvrage.",
+  },
+  {
     id: "ultrasonique",
     title: "Essai ultrasonique",
     short:
@@ -27,6 +91,7 @@ export const SERVICES = [
     href: "/services#ultrasonique",
     icon: "wave" as const,
     imageMatch: "contrôle et suivi|controle et suivi",
+    featured: false,
     description:
       "L’essai ultrasonique est une méthode non destructive qui évalue la qualité du béton déjà en place. En mesurant la vitesse de propagation des ondes, on estime l’homogénéité, la compacité relative et d’éventuelles zones altérées — utile pour le diagnostic de structures existantes, le suivi d’ouvrages ou le contrôle complémentaire après coulage, sans endommager l’élément inspecté. Destiné aux bureaux d’études génie civil, architectes et entreprises de réhabilitation en Algérie.",
     checks: [
@@ -40,26 +105,6 @@ export const SERVICES = [
       "Bonjour LEAGB, je souhaite demander un essai ultrasonique sur béton pour mon ouvrage.",
   },
   {
-    id: "etude-sol",
-    title: "Étude de sol & étude de stabilité",
-    short:
-      "Étude de sol et étude de stabilité en Algérie pour sécuriser fondations et terrassements.",
-    href: "/services/etude-de-sol",
-    icon: "soil" as const,
-    imageMatch: "étude de sol|etude de sol",
-    description:
-      "Avant de fonder un bâtiment, un lotissement ou un ouvrage d’art, l’étude de sol caractérise la nature des terrains, leur portance et les risques (tassements, nappe, hétérogénéités). LEAGB accompagne aussi l’étude de stabilité (talus, remblais, excavations) pour dimensionner les fondations et limiter les aléas. Missions destinées aux promoteurs immobiliers, architectes et bureaux d’études génie civil en Algérie.",
-    checks: [
-      "Nature et succession des couches de sol",
-      "Paramètres utiles au dimensionnement des fondations",
-      "Risques de tassement et sensibilité à l’eau",
-      "Stabilité de talus, remblais ou excavations",
-      "Recommandations techniques pour le projet",
-    ],
-    whatsappMessage:
-      "Bonjour LEAGB, je souhaite demander une étude de sol / étude de stabilité pour mon projet en Algérie.",
-  },
-  {
     id: "pressiometre",
     title: "Sondage pressiométrique (APAGEO)",
     short:
@@ -67,6 +112,7 @@ export const SERVICES = [
     href: "/services#pressiometre",
     icon: "pressure" as const,
     imageMatch: "sondage pressiom",
+    featured: false,
     description:
       "Le sondage pressiométrique Ménard, réalisé avec un pressiomètre APAGEO, mesure in situ le comportement du sol sous pression. Il fournit des modules et pressions limites essentiels au calcul des fondations superficielles ou profondes. Référence pour les bureaux d’études génie civil et maîtres d’œuvre en Algérie qui exigent des données terrain fiables, au-delà des seuls essais de laboratoire.",
     checks: [
@@ -79,30 +125,13 @@ export const SERVICES = [
     whatsappMessage:
       "Bonjour LEAGB, je souhaite demander un sondage pressiométrique (pressiomètre APAGEO) pour mon projet.",
   },
-  {
-    id: "injection-beton",
-    title: "Injection fissure béton",
-    short:
-      "Injection fissure béton (technologie allemande) : colmatage et consolidation structurelle.",
-    href: "/services/injection-fissure-beton",
-    icon: "inject" as const,
-    imageMatch: "fissures|injection",
-    description:
-      "L’injection fissure béton traite les désordres liés au retrait, aux mouvements différentiels ou à un dysfonctionnement structurel. LEAGB propose un traitement par injection selon une technologie allemande : diagnostic, choix de la résine adaptée, injection contrôlée pour colmater, consolider et, selon le cas, rétablir l’étanchéité. Destiné aux promoteurs, entreprises de bâtiment et architectes en Algérie — une réparation durable, pas un masquage cosmétique.",
-    checks: [
-      "Nature et activité des fissures (stables / évolutives)",
-      "Choix du produit d’injection adapté au désordre",
-      "Colmatage et consolidation des fissures",
-      "Amélioration de l’étanchéité lorsque requis",
-      "Recommandations de suivi après intervention",
-    ],
-    whatsappMessage:
-      "Bonjour LEAGB, je souhaite demander une injection fissure béton (technologie allemande) pour mon ouvrage.",
-  },
 ] as const;
 
 export type ServiceId = (typeof SERVICES)[number]["id"];
 export type Service = (typeof SERVICES)[number];
+
+/** Les 4 expertises mises en avant (accueil) */
+export const FEATURED_SERVICES = SERVICES.filter((s) => s.featured);
 
 export const SERVICES_FAQ = [
   {

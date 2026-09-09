@@ -3,11 +3,12 @@ import { z } from "zod";
 import { SERVICES } from "@/lib/services";
 
 export const serviceSelectValues = [
-  "controle-beton",
-  "ultrasonique",
   "etude-sol",
-  "pressiometre",
+  "etude-stabilite",
+  "controle-beton",
   "injection-beton",
+  "ultrasonique",
+  "pressiometre",
   "autre",
 ] as const;
 

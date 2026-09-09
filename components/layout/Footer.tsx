@@ -3,7 +3,7 @@ import { MapPin, Phone } from "lucide-react";
 
 import { BrandLogo } from "@/components/brand/BrandLogo";
 import { socialIconMap } from "@/components/social/SocialIcons";
-import { NAV_LINKS, SITE, SOCIAL_LINKS } from "@/lib/site";
+import { NAV_LINKS, SITE, SOCIAL_LINKS, buildWhatsAppUrl } from "@/lib/site";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -46,19 +46,29 @@ export function Footer() {
           </h2>
           <ul className="mt-4 space-y-3 text-sm text-navy-foreground/75">
             <li>
-              <a
-                href={`tel:${SITE.phoneTel}`}
-                className="inline-flex items-start justify-center gap-2 transition-colors hover:text-navy-foreground md:justify-start"
-              >
+              <div className="inline-flex items-start justify-center gap-2 md:justify-start">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-amber-tech" aria-hidden />
                 <span className="text-left">
-                  Tél. / WhatsApp
-                  <br />
-                  <span className="font-medium text-navy-foreground">
-                    {SITE.phoneDisplay}
-                  </span>
+                  <span className="block">Téléphone</span>
+                  {SITE.phones.map((phone) => (
+                    <a
+                      key={phone.tel}
+                      href={`tel:${phone.tel}`}
+                      className="mt-1 block font-medium text-navy-foreground transition-colors hover:text-amber-tech"
+                    >
+                      {phone.display}
+                    </a>
+                  ))}
+                  <a
+                    href={buildWhatsAppUrl()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 block text-navy-foreground/80 transition-colors hover:text-amber-tech"
+                  >
+                    WhatsApp · {SITE.phoneDisplay}
+                  </a>
                 </span>
-              </a>
+              </div>
             </li>
             <li className="inline-flex items-start justify-center gap-2 md:justify-start">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-amber-tech" aria-hidden />

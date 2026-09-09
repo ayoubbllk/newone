@@ -29,10 +29,10 @@ export function pageMetadata({
 
 export const PAGE_SEO = {
   home: pageMetadata({
-    title: "Laboratoire géotechnique à Alger — LEAGB Chéraga",
+    title: "Laboratoire géotechnique et béton à Alger — LEAGB Chéraga",
     description:
-      "Laboratoire géotechnique LEAGB à Chéraga (Alger) : essais terrain et laboratoire pour promoteurs, bureaux d’études génie civil, architectes et entreprises TP / bâtiment en Algérie. Tél. " +
-      SITE.phoneDisplay +
+      "Laboratoire géotechnique et béton LEAGB à Chéraga (Alger) : essais terrain et laboratoire pour promoteurs, bureaux d’études génie civil, architectes et entreprises TP / bâtiment en Algérie. Tél. " +
+      SITE.phones.map((p) => p.display).join(" · ") +
       ".",
     path: "/",
   }),

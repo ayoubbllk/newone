@@ -36,7 +36,7 @@ export function LocalBusinessJsonLd() {
       "Étude de sol",
       "Étude de stabilité",
       "Contrôle béton",
-      "Injection fissure béton",
+      "Traitement et injection des fissures de béton",
       "Sondage pressiométrique",
       "Essai ultrasonique",
     ],

@@ -1,25 +1,22 @@
 import { BlogPreview } from "@/components/home/BlogPreview";
 import { FinalCta } from "@/components/home/FinalCta";
 import { Hero } from "@/components/home/Hero";
-import { MaterielGrid } from "@/components/home/MaterielGrid";
 import { ProjectsPreview } from "@/components/home/ProjectsPreview";
 import { ProofChainShowcase } from "@/components/home/ProofChainShowcase";
 import { ServicesPreview } from "@/components/home/ServicesPreview";
 import { WhyUs } from "@/components/home/WhyUs";
 import {
   getBannerMaterielImages,
-  getMaterielImages,
   getPhotoGeneraleImages,
 } from "@/lib/getImages";
 import { bannersToProofStories } from "@/lib/proofStories";
 import { PAGE_SEO } from "@/lib/seo";
-import { SERVICES } from "@/lib/services";
+import { FEATURED_SERVICES } from "@/lib/services";
 import { resolveAllServicePhotos } from "@/lib/serviceImages";
 
 export const metadata = PAGE_SEO.home;
 
 export default function HomePage() {
-  const materiel = getMaterielImages();
   /* Bannières marketing : uniquement via ProofChain (pas en photo croppée) */
   const banners = getBannerMaterielImages();
   const proofStories = bannersToProofStories(banners);
@@ -32,8 +29,12 @@ export default function HomePage() {
     alt: img.name,
   }));
 
-  const serviceSlides = SERVICES.map((service) => {
-    const photo = servicePhotos[service.id];
+  const serviceSlides = FEATURED_SERVICES.map((service) => {
+    const photo =
+      servicePhotos[service.id] ??
+      (service.id === "etude-stabilite"
+        ? servicePhotos["etude-sol"]
+        : undefined);
     return {
       id: service.id,
       title: service.title,
@@ -49,7 +50,7 @@ export default function HomePage() {
     {
       title: "Fondations résidence collective",
       wilaya: "Alger",
-      service: "Étude de sol & stabilité",
+      service: "Étude de sol",
       image:
         servicePhotos["etude-sol"]?.src ??
         "/designe/fff9d067c6307cb2a21f1fcb53c50c13.jpg",
@@ -62,11 +63,11 @@ export default function HomePage() {
         servicePhotos["controle-beton"]?.src ?? "/designe/banner.png",
     },
     {
-      title: "Sondage pressiométrique lotissement",
-      wilaya: "Tipaza",
-      service: "Sondage pressiométrique",
+      title: "Injection fissures immeuble",
+      wilaya: "Sétif",
+      service: "Traitement et injection des fissures de béton",
       image:
-        servicePhotos["pressiometre"]?.src ?? "/designe/banner.png",
+        servicePhotos["injection-beton"]?.src ?? "/designe/banner.png",
     },
   ];
 
@@ -79,7 +80,7 @@ export default function HomePage() {
             : [
                 {
                   src: "/designe/banner.png",
-                  alt: "Laboratoire géotechnique LEAGB",
+                  alt: "Laboratoire géotechnique et béton LEAGB",
                 },
               ]
         }
@@ -90,7 +91,6 @@ export default function HomePage() {
       )}
 
       <ServicesPreview slides={serviceSlides} />
-      <MaterielGrid images={materiel} />
       <WhyUs />
       <ProjectsPreview projects={projects} />
       <BlogPreview />
