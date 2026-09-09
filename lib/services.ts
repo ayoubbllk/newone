@@ -83,48 +83,6 @@ export const SERVICES = [
     whatsappMessage:
       "Bonjour LEAGB, je souhaite demander un traitement / injection des fissures de béton pour mon ouvrage.",
   },
-  {
-    id: "ultrasonique",
-    title: "Essai ultrasonique",
-    short:
-      "Diagnostic non destructif de l’homogénéité et de la qualité du béton en place.",
-    href: "/services#ultrasonique",
-    icon: "wave" as const,
-    imageMatch: "contrôle et suivi|controle et suivi",
-    featured: false,
-    description:
-      "L’essai ultrasonique est une méthode non destructive qui évalue la qualité du béton déjà en place. En mesurant la vitesse de propagation des ondes, on estime l’homogénéité, la compacité relative et d’éventuelles zones altérées — utile pour le diagnostic de structures existantes, le suivi d’ouvrages ou le contrôle complémentaire après coulage, sans endommager l’élément inspecté. Destiné aux bureaux d’études génie civil, architectes et entreprises de réhabilitation en Algérie.",
-    checks: [
-      "Homogénéité et compacité relative du béton en place",
-      "Repérage de zones potentiellement dégradées ou hétérogènes",
-      "Complément au contrôle destructif (carottage / compression)",
-      "Diagnostic d’ouvrages existants avant réhabilitation",
-      "Suivi comparatif dans le temps sur un même élément",
-    ],
-    whatsappMessage:
-      "Bonjour LEAGB, je souhaite demander un essai ultrasonique sur béton pour mon ouvrage.",
-  },
-  {
-    id: "pressiometre",
-    title: "Sondage pressiométrique (APAGEO)",
-    short:
-      "Mesures in situ au pressiomètre APAGEO pour dimensionner vos ouvrages.",
-    href: "/services#pressiometre",
-    icon: "pressure" as const,
-    imageMatch: "sondage pressiom",
-    featured: false,
-    description:
-      "Le sondage pressiométrique Ménard, réalisé avec un pressiomètre APAGEO, mesure in situ le comportement du sol sous pression. Il fournit des modules et pressions limites essentiels au calcul des fondations superficielles ou profondes. Référence pour les bureaux d’études génie civil et maîtres d’œuvre en Algérie qui exigent des données terrain fiables, au-delà des seuls essais de laboratoire.",
-    checks: [
-      "Module pressiométrique et pression limite",
-      "Profil de résistance des couches traversées",
-      "Données pour fondations superficielles et profondes",
-      "Calage des hypothèses de calcul géotechnique",
-      "Complément aux carottages et essais laboratoire",
-    ],
-    whatsappMessage:
-      "Bonjour LEAGB, je souhaite demander un sondage pressiométrique (pressiomètre APAGEO) pour mon projet.",
-  },
 ] as const;
 
 export type ServiceId = (typeof SERVICES)[number]["id"];
@@ -152,7 +110,7 @@ export const SERVICES_FAQ = [
   {
     question: "Quels types de sols et de chantiers couvrez-vous ?",
     answer:
-      "Nous accompagnons des projets résidentiels, tertiaires, d’infrastructure et de réhabilitation : étude de sol, étude de stabilité, pressiomètre, contrôle béton et diagnostics sur ouvrages existants. Chaque terrain (remblai, argile, sable, etc.) impose un protocole adapté — nous vous orientons après un premier échange.",
+      "Nous accompagnons des projets résidentiels, tertiaires, d’infrastructure et de réhabilitation : étude de sol, étude de stabilité, contrôle béton et traitement des fissures. Chaque terrain (remblai, argile, sable, etc.) impose un protocole adapté — nous vous orientons après un premier échange.",
   },
   {
     question: "Faut-il une étude de sol avant toute construction ?",

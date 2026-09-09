@@ -15,25 +15,17 @@ const PHOTO_RULES: {
 }[] = [
   {
     id: "controle-beton",
-    match: /v[ée]rification.*qualit[ée].*b[ée]ton/i,
-  },
-  {
-    id: "ultrasonique",
-    match: /contr[ôo]le et suivi.*qualit[ée]/i,
+    match: /v[ée]rification.*qualit[ée].*b[ée]ton|contr[ôo]le et suivi.*qualit[ée]/i,
   },
   {
     id: "etude-sol",
-    match: /[ée]tude de sol/i,
+    match: /[ée]tude de sol|sondage pressiom/i,
     prefer: /\+/,
   },
   {
     id: "etude-stabilite",
     match: /[ée]tude de sol|stabilit/i,
     prefer: /\+/,
-  },
-  {
-    id: "pressiometre",
-    match: /sondage pressiom/i,
   },
   {
     id: "injection-beton",

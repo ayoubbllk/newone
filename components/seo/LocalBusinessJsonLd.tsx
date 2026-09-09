@@ -37,8 +37,6 @@ export function LocalBusinessJsonLd() {
       "Étude de stabilité",
       "Contrôle béton",
       "Traitement et injection des fissures de béton",
-      "Sondage pressiométrique",
-      "Essai ultrasonique",
     ],
     audience: {
       "@type": "Audience",

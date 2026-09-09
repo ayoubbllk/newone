@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s | LEAGB",
   },
   description:
-    "Laboratoire géotechnique et béton LEAGB à Chéraga (Alger) : essais terrain et laboratoire pour promoteurs, bureaux d’études, architectes et entreprises BTP en Algérie. Tél. 0661 10 07 03 · 0770 01 29 32 · 0550 35 90 25.",
+    "Laboratoire géotechnique et béton à Alger — LEAGB Chéraga. Étude de sol, étude de stabilité, contrôle béton et injection des fissures. Tél. 0661 10 07 03 · 0770 01 29 32 · 0550 35 90 25.",
   keywords: [
     "étude de sol",
     "étude de sol Algérie",
@@ -25,8 +25,6 @@ export const metadata: Metadata = {
     "promoteur immobilier Algérie",
     "entreprise travaux publics",
     "architecte Alger",
-    "essai ultrasonique",
-    "pressiomètre APAGEO",
     "Chéraga",
     "Alger",
     "LEAGB",
@@ -37,14 +35,14 @@ export const metadata: Metadata = {
     siteName: "LEAGB",
     title: "LEAGB — Laboratoire géotechnique et béton à Alger",
     description:
-      "Essais géotechniques et béton à Chéraga (Alger) pour promoteurs, BE génie civil, architectes et entreprises TP / bâtiment en Algérie.",
+      "Laboratoire géotechnique et béton à Alger : étude de sol, étude de stabilité, contrôle béton et traitement des fissures.",
     images: [{ url: "/Logo.jpeg", alt: "LEAGB — Laboratoire Géotechnique Algérie" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "LEAGB — Laboratoire géotechnique et béton à Alger",
     description:
-      "Laboratoire géotechnique et béton à Chéraga : missions terrain et laboratoire pour le BTP en Algérie.",
+      "Laboratoire géotechnique et béton à Alger — LEAGB Chéraga.",
   },
   robots: {
     index: true,

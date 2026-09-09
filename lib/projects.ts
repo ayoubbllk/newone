@@ -32,29 +32,29 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "lotissement-tipaza",
-    title: "Sondage pressiométrique lotissement",
+    title: "Étude de sol lotissement",
     wilaya: "Tipaza",
-    serviceId: "pressiometre",
+    serviceId: "etude-sol",
     summary:
-      "Profils pressiométriques APAGEO pour le dimensionnement des fondations individuelles.",
+      "Campagne géotechnique pour le dimensionnement des fondations individuelles.",
     imageKey: "pressiom",
   },
   {
     id: "usine-oran",
     title: "Étude de stabilité plateforme industrielle",
     wilaya: "Oran",
-    serviceId: "etude-sol",
+    serviceId: "etude-stabilite",
     summary:
       "Caractérisation des remblais et analyse de stabilité avant extension d’atelier.",
     imageKey: "sondeuse",
   },
   {
     id: "rehab-bejaia",
-    title: "Diagnostic ultrasonique bâtiment tertiaire",
+    title: "Contrôle béton bâtiment tertiaire",
     wilaya: "Béjaïa",
-    serviceId: "ultrasonique",
+    serviceId: "controle-beton",
     summary:
-      "Cartographie non destructive de la qualité du béton avant réhabilitation structurelle.",
+      "Contrôle de la qualité du béton avant réhabilitation structurelle.",
     imageKey: "penetro",
   },
   {

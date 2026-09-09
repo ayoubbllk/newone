@@ -113,21 +113,10 @@ export function Hero({ curvedImages }: HeroProps) {
             </span>
           </motion.h1>
 
-          <motion.p
-            initial={reduceMotion ? false : { opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.16 }}
-            className="mt-5 max-w-xl text-sm leading-relaxed text-navy-foreground/80 sm:text-base lg:text-lg"
-          >
-            LEAGB à Chéraga : essais terrain et laboratoire pour promoteurs,
-            bureaux d’études, architectes et entreprises TP / bâtiment en
-            Algérie.
-          </motion.p>
-
           <motion.div
             initial={reduceMotion ? false : { opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.24 }}
+            transition={{ duration: 0.55, delay: 0.16 }}
             className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center"
           >
             <Button asChild variant="cta" size="lg" className="w-full sm:w-auto">

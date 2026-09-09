@@ -31,15 +31,15 @@ export const PAGE_SEO = {
   home: pageMetadata({
     title: "Laboratoire géotechnique et béton à Alger — LEAGB Chéraga",
     description:
-      "Laboratoire géotechnique et béton LEAGB à Chéraga (Alger) : essais terrain et laboratoire pour promoteurs, bureaux d’études génie civil, architectes et entreprises TP / bâtiment en Algérie. Tél. " +
+      "Laboratoire géotechnique et béton à Alger — LEAGB Chéraga. Étude de sol, étude de stabilité, contrôle béton et injection des fissures. Tél. " +
       SITE.phones.map((p) => p.display).join(" · ") +
       ".",
     path: "/",
   }),
   services: pageMetadata({
-    title: "Services géotechniques & béton — catalogue LEAGB",
+    title: "Services — étude de sol, stabilité, béton & fissures",
     description:
-      "Catalogue des missions LEAGB en Algérie : reconnaissance géotechnique, essais béton, sondages pressiométriques et diagnostic structurel. Orienter vers la page dédiée selon votre besoin.",
+      "Catalogue LEAGB : étude de sol, étude de stabilité, contrôle béton et traitement / injection des fissures de béton en Algérie.",
     path: "/services",
   }),
   projets: pageMetadata({
@@ -51,7 +51,7 @@ export const PAGE_SEO = {
   blog: pageMetadata({
     title: "Blog — Étude de sol & béton en Algérie",
     description:
-      "Guides techniques LEAGB : étude de sol, contrôle béton, fissures et pressiomètre — pour promoteurs, bureaux d’études, architectes et entreprises BTP en Algérie.",
+      "Guides techniques LEAGB : étude de sol, contrôle béton et injection de fissures — pour promoteurs, bureaux d’études, architectes et entreprises BTP en Algérie.",
     path: "/blog",
   }),
   contact: pageMetadata({

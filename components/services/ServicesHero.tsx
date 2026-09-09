@@ -16,13 +16,11 @@ export function ServicesHero() {
             Services
           </p>
           <h1 className="mt-4 text-balance text-3xl font-bold tracking-tight text-navy-foreground sm:text-4xl lg:text-5xl">
-            Services géotechniques et béton — catalogue LEAGB
+            Quatre expertises géotechniques et béton
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-navy-foreground/75 sm:text-base lg:text-lg">
-            Choisissez la mission adaptée à votre chantier : pages dédiées pour
-            les expertises clés, protocoles détaillés pour les essais
-            complémentaires — promoteurs, BE génie civil, architectes et
-            entreprises TP / bâtiment.
+            Étude de sol, étude de stabilité, contrôle béton et traitement des
+            fissures — choisissez la mission adaptée à votre chantier.
           </p>
         </Reveal>
 

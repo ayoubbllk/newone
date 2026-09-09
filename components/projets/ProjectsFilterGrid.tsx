@@ -27,8 +27,6 @@ const FILTER_LABELS: Record<ServiceId | "all", string> = {
   "etude-stabilite": "Étude de stabilité",
   "controle-beton": "Contrôle béton",
   "injection-beton": "Traitement et injection des fissures de béton",
-  ultrasonique: "Essai ultrasonique",
-  pressiometre: "Pressiomètre",
 };
 
 export function ProjectsFilterGrid({ projects }: ProjectsFilterGridProps) {

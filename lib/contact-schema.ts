@@ -7,8 +7,6 @@ export const serviceSelectValues = [
   "etude-stabilite",
   "controle-beton",
   "injection-beton",
-  "ultrasonique",
-  "pressiometre",
   "autre",
 ] as const;
 

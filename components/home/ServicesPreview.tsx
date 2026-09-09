@@ -74,8 +74,7 @@ export function ServicesPreview({ slides }: ServicesPreviewProps) {
           className="section-header mb-10 text-base font-medium leading-snug tracking-tight text-white/70 sm:mb-14 sm:text-xl lg:text-2xl"
         >
           Étude de sol, étude de stabilité, contrôle béton et traitement des
-          fissures — LEAGB intervient en Algérie pour promoteurs, BE génie
-          civil, architectes et entreprises TP / bâtiment.
+          fissures pour sécuriser vos ouvrages en Algérie.
         </motion.p>
 
         <RevealStagger className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
